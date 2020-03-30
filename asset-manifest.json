@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/css/main.5ecd60fb.chunk.css",
+    "main.js": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/main.7cfbd07f.chunk.js",
+    "main.js.map": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/main.7cfbd07f.chunk.js.map",
+    "runtime-main.js": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/runtime-main.296a99ef.js",
+    "runtime-main.js.map": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/runtime-main.296a99ef.js.map",
+    "static/js/2.807bcfc8.chunk.js": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/2.807bcfc8.chunk.js",
+    "static/js/2.807bcfc8.chunk.js.map": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/2.807bcfc8.chunk.js.map",
+    "index.html": "/Pied-Piper-DeFi-App-Subspace-Demo-/index.html",
+    "precache-manifest.b7cc4beffb6a20a2872af60e110b0b02.js": "/Pied-Piper-DeFi-App-Subspace-Demo-/precache-manifest.b7cc4beffb6a20a2872af60e110b0b02.js",
+    "service-worker.js": "/Pied-Piper-DeFi-App-Subspace-Demo-/service-worker.js",
+    "static/css/main.5ecd60fb.chunk.css.map": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/css/main.5ecd60fb.chunk.css.map",
+    "static/js/2.807bcfc8.chunk.js.LICENSE.txt": "/Pied-Piper-DeFi-App-Subspace-Demo-/static/js/2.807bcfc8.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.296a99ef.js",
+    "static/js/2.807bcfc8.chunk.js",
+    "static/css/main.5ecd60fb.chunk.css",
+    "static/js/main.7cfbd07f.chunk.js"
+  ]
+}
