@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/Pied-Piper-DeFi-App-Subspace-Demo-/precache-manifest.b7cc4beffb6a20a2872af60e110b0b02.js"
+  "/Pied-Piper-DeFi-App-Subspace-Demo-/precache-manifest.2a4d314949b41f0466afca3cf2e4740b.js"
 );
 
 self.addEventListener('message', (event) => {
@@ -35,5 +35,5 @@ workbox.precaching.precacheAndRoute(self.__precacheManifest, {});
 
 workbox.routing.registerNavigationRoute(workbox.precaching.getCacheKeyForURL("/Pied-Piper-DeFi-App-Subspace-Demo-/index.html"), {
   
-  blacklist: [/^\/_/,/\/[^\/?]+\.[^\/]+$/],
+  blacklist: [/^\/_/,/\/[^/?]+\.[^/]+$/],
 });
