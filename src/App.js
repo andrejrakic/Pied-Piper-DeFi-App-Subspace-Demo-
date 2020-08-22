@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Box, Grommet, DataTable, Text, Image } from 'grommet';
 import { PiedPiper } from 'grommet-icons';
-import { pipe } from 'rxjs';
+// import { pipe } from 'rxjs';
 import Subspace, { $latest } from '@embarklabs/subspace';
 import Web3 from 'web3';
 import exchangeABI from './contracts/exchange_abi.json';
@@ -34,11 +34,11 @@ function App() {
 
 	// Effect hook to define subspace observables
 	useEffect(() => {
-		web3.eth.getBlockNumber().then(block => setBlock(block));
+		web3.eth.getBlockNumber().then((block) => setBlock(block));
 		if (typeof latestBlock != 'number') return;
 
 		const EthPurchased$ = daiContract.events.EthPurchase.track({
-			fromBlock: latestBlock - 50
+			fromBlock: latestBlock - 50,
 		});
 		const last5$ = EthPurchased$.pipe($latest(5));
 		setObservable(EthPurchased$);
@@ -50,7 +50,7 @@ function App() {
 		if (txnObserver === undefined || typeof latestBlock != 'number') {
 			return;
 		} else {
-			txnObserver.subscribe(trade => {
+			txnObserver.subscribe((trade) => {
 				//console.log(trade);
 			});
 		}
@@ -62,8 +62,8 @@ function App() {
 		if (last5Observer === undefined) {
 			return;
 		} else {
-			last5Observer.subscribe(fiveTrades => {
-				const prices = fiveTrades.map(trade => {
+			last5Observer.subscribe((fiveTrades) => {
+				const prices = fiveTrades.map((trade) => {
 					const txnDetails = new TradeDetails(
 						trade.tokens_sold,
 						trade.eth_bought
@@ -73,7 +73,7 @@ function App() {
 						block: trade.buyer,
 						rate: txnDetails.exchangeRate,
 						ethBought: txnDetails.ethBought,
-						tokensSold: txnDetails.tokensSold
+						tokensSold: txnDetails.tokensSold,
 					};
 				});
 				setLast5(prices);
@@ -81,6 +81,12 @@ function App() {
 		}
 		return last5Observer.unsubscribe;
 	}, [last5Observer]);
+
+	let logInfo = () => console.log('Just testing CI/CD Action');
+
+	useEffect(() => {
+		logInfo();
+	}, []);
 
 	return (
 		<Grommet>
@@ -102,7 +108,7 @@ function App() {
 	);
 }
 
-const AppBar = props => (
+const AppBar = (props) => (
 	<Box
 		tag='header'
 		direction='row'
@@ -112,7 +118,7 @@ const AppBar = props => (
 		pad={{
 			left: 'medium',
 			right: 'small',
-			vertical: 'small'
+			vertical: 'small',
 		}}
 		elevation='medium'
 		style={{ zIndex: '1' }}
@@ -120,27 +126,27 @@ const AppBar = props => (
 	/>
 );
 
-const Tradelist = props => (
+const Tradelist = (props) => (
 	<Box direction='column' align='center' pad='medium'>
 		<DataTable
 			columns={[
 				{
 					property: 'block',
-					header: <Text weight='bold'>Buyer</Text>
+					header: <Text weight='bold'>Buyer</Text>,
 				},
 				{
 					property: 'ethBought',
-					header: <Text>ETH Bought</Text>
+					header: <Text>ETH Bought</Text>,
 				},
 				{
 					property: 'tokensSold',
-					header: <Text>DAI Tokens Sold</Text>
+					header: <Text>DAI Tokens Sold</Text>,
 				},
 				{
 					property: 'rate',
 					header: <Text>ETH ---> DAI Exchange Rate</Text>,
-					primary: true
-				}
+					primary: true,
+				},
 			]}
 			data={props.last5}
 		/>
